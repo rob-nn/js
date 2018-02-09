@@ -1,0 +1,12 @@
+const m0 = require ('./module01');
+console.log(m0.hello());
+console.log(m0.f0module1('my message'));
+console.log(m0.anotherFunc());
+const mylib = require('mylib');
+console.log(mylib.getModName());
+const modfile = require('modfile');
+console.log(modfile.getModName());
+const fs = require('./node_modules/fs');
+console.log(fs.getModName());
+const modpath = require('modpath');
+console.log(modpath.getModName());

@@ -1,0 +1,13 @@
+CHAPTER 1
+	Techniques to nonblocking computations:
+		1 - Events;
+		2 - Asynchronous APIs;
+		3 - Nonblocking I/O.
+	Uses of V8 JavaScript. This thing compiles to machine code and optimize js code.
+	npm init -y: create a new project with default settings.
+	npm i --save express: install a package, in this case express, and adds it to the package.json file.
+LIBS TO STUDY
+	- express;
+	- koa;
+	- libuv;
+	- server;

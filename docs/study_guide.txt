@@ -1,0 +1,12 @@
+Inicio 07/12/2018
+- NodeJS;
+	- Young, Bradley Meck Alex; Cantelon, Mike; Node.js in Action, Second Edition, Manning Publications, 2017
+- MongoDB;
+	- Bradshow, Shannon; Chodorow, Kristina; MongoDB: The Definitive Guide, 3rd Edition, O'Reilly Media, Inc, 2018
+- JavaScript;
+	- Haverbeke, Marijin; Eloquent Javascript; No Starch Press, 2014
+- Js functional;
+	- Atencio, Luis; Functional Programming in JavaScript, Manning Publications, 2016
+- React;
+	- Mardan, Azat; React Quickly: Painless web apps with React, JSX, Redux, and GraphQL, Manning Publications, 2017
+- Some UI React lib;
