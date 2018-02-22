@@ -6,6 +6,9 @@ CHAPTER 1
 	Uses of V8 JavaScript. This thing compiles to machine code and optimize js code.
 	npm init -y: create a new project with default settings.
 	npm i --save express: install a package, in this case express, and adds it to the package.json file.
+
+CHAPTER 2
+	Use exports that is set to modules.exports. module.exports is ther real thing.
 LIBS TO STUDY
 	- express;
 	- koa;
