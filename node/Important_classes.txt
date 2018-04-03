@@ -1,0 +1,6 @@
+Buffer
+ChildProcess
+Error
+EventEmitter
+Socket
+Stream
