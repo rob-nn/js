@@ -47,5 +47,22 @@ describe('LDJClient', () => {
 		});
 		stream.emit('data', '{fool:\n');
 	});
+	
+	it('should receive an typé error message when LDJCLient receives a data with no JSON.', done => {
+		client.on('message', message => {
+			assert.deepEqual(message.type, 'error');
+			done();
+		});
+		stream.emit('data', new Date());
+	});
+
+	it('should receive a timeout error message when LDJClient receives a JSON obj without a new line', done=>{
+		client.on('message', message=> {
+			assert.deepEqual(message.type, 'error');
+			assert.deepEqual(message.message, 'timeout');
+			done();
+		});
+		stream.emit('data', '{"fool":"bar"}');
+	});
 });
 

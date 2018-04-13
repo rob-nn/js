@@ -10,25 +10,41 @@ class LDJClient extends EventEmitter {
 			throw new Error('Stream must not be null.');
 		}
 		let buffer = '';
+		let messageCompleted = false;	
 		stream.on('data', chunk => {
-			buffer += chunk;
-			let boundary = buffer.indexOf('\n');
-			while(boundary !== -1) {
-				const input = buffer.substring(0, boundary);
-				buffer = buffer.substring(boundary +1);
-				let obj = null;
-				try {
-					obj = JSON.parse(input);
-					console.log(obj);
+			if (typeof chunk !== 'string') {
+				this.emit('message', {type:"error", message: 'Not a string object in data event'}); 
+			} else { 
+				if (buffer = '') {
+					const time = setTimeout(()=> {
+						if (!messageCompleted){ 	
+							this.emit('message', {type:"error", message: 'timeout'}); 
+							buffer = '';
+						}
+					}, 500);
+				} else {
+					messageCompleted = false;
 				}
-				catch (error) {
-					console.log('erro!');
-					this.emit('message', {type:"error", message: error.toString()}); 
-				}	
-				if (obj) {
-					this.emit('message', obj);
+				buffer += chunk;
+				let boundary = buffer.indexOf('\n');
+				while(boundary !== -1) {
+					const input = buffer.substring(0, boundary);
+					buffer = buffer.substring(boundary +1);
+					let obj = null;
+					try {
+						obj = JSON.parse(input);
+						console.log(obj);
+					}
+					catch (error) {
+						console.log('erro!');
+						this.emit('message', {type:"error", message: error.toString()}); 
+					}	
+					if (obj) {
+						this.emit('message', obj);
+					}
+					boundary = buffer.indexOf('\n');
+					messageCompleted = true;
 				}
-				boundary = buffer.indexOf('\n');
 			}
 		});
 	}
