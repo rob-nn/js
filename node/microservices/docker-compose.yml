@@ -1,7 +1,7 @@
 version: "3.4"
 services:
-  node: 
-    image: "robnn/node:latest"
+  node-zmq: 
+    image: "robnn/node-zmq:latest"
     user: "node"
     working_dir: /home/node/app
     stdin_open: true
@@ -14,6 +14,7 @@ services:
     ports:
       - "8001:8001"
       - "60300:60300"
+      - "60400:60400"
     build:
       context: ./
       dockerfile: Dockerfile
