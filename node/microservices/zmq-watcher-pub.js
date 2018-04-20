@@ -5,7 +5,7 @@ const fs = require('fs');
 console.log("Requesting zeromq");
 const zmq = require('zeromq');
 console.log("Getting file name...");
-const filename = prooess.argv[2];
+const filename = process.argv[2];
 
 const publisher = zmq.socket('pub');
 fs.watch(filename, () => {

@@ -1,6 +1,6 @@
 version: "3.4"
 services:
-  node-zmq: 
+  sh: 
     image: "robnn/node-zmq:latest"
     user: "node"
     working_dir: /home/node/app
