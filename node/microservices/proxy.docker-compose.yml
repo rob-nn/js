@@ -1,0 +1,21 @@
+version: "3.4"
+services:
+  sh: 
+    image: "robnn/node-zmq:latest"
+    user: "node"
+    working_dir: /home/node/app
+    stdin_open: true
+    tty: true
+    network_mode: host
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "8001:8001"
+      - "60300:60300"
+      - "60400:60400"
+    build:
+      context: ./
+      dockerfile: proxy.Dockerfile
+ 
