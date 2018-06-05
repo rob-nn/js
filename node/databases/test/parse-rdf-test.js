@@ -11,6 +11,7 @@ const parseRDF = require('../lib/parse-rdf.js');
 describe('parseRDF', () => {
 	it('should be a function', () => {
 		expect(parseRDF).to.be.a('function');
+
 	});
 	it('should parse RDF content', () => {
 		const book = parseRDF(rdf);
